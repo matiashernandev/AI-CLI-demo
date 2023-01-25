@@ -1,5 +1,7 @@
 import cohere from "cohere-ai";
-cohere.init("ydPiVqgkHS0JGnMWNrrNzZwRYrIGc5siPVapKz8N");
+import * as dotenv from "dotenv";
+dotenv.config();
+cohere.init(process.env.API_KEY);
 
 const response = await cohere.generate({
     model: "xlarge",
